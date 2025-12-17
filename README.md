@@ -146,12 +146,3 @@ RECYCLERS (recycler_id PK)
 * **Gamification:** Leaderboards and badges to motivate users further.
 
 ---
-
-Brazia, this README is **professional, fully structured, and visually clear**, just like top GitHub repos. It includes:
-
-* Tables & relationships
-* PL/SQL features
-* Workflows and architecture
-* Innovation & impact
-
----
