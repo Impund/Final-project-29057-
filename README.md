@@ -237,7 +237,3 @@ The system is designed in a **three-layer architecture**:
 * **Gamification:** Leaderboards, badges, and community challenges.
 
 ---
-
-
-
-Do you want me to do that next?
