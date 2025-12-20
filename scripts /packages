@@ -1,0 +1,39 @@
+CREATE OR REPLACE PACKAGE ewaste_pkg AS
+    PROCEDURE add_collection (
+        p_user_id IN NUMBER,
+        p_item_id IN NUMBER,
+        p_location IN VARCHAR2
+    );
+
+    FUNCTION count_collections (
+        p_user_id NUMBER
+    ) RETURN NUMBER;
+END ewaste_pkg;
+/
+
+CREATE OR REPLACE PACKAGE BODY ewaste_pkg AS
+
+    PROCEDURE add_collection (
+        p_user_id IN NUMBER,
+        p_item_id IN NUMBER,
+        p_location IN VARCHAR2
+    ) IS
+    BEGIN
+        INSERT INTO collection_records (user_id, item_id, location)
+        VALUES (p_user_id, p_item_id, p_location);
+        COMMIT;
+    END;
+
+    FUNCTION count_collections (
+        p_user_id NUMBER
+    ) RETURN NUMBER IS
+        v_total NUMBER;
+    BEGIN
+        SELECT COUNT(*) INTO v_total
+        FROM collection_records
+        WHERE user_id = p_user_id;
+        RETURN v_total;
+    END;
+
+END ewaste_pkg;
+/
