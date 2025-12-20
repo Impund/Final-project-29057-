@@ -1,0 +1,46 @@
+# Logical Data Model - E-Waste Collection & Recycling System
+
+## Entities & Attributes
+
+### Users
+- `user_id` (PK)  
+- `full_name`  
+- `email` (Unique)  
+- `role` (ADMIN, COLLECTOR, RECYCLER)  
+- `created_at` (Default SYSDATE)
+
+### E-Waste Items
+- `item_id` (PK)  
+- `item_name`  
+- `category` (COMPUTER, PHONE, BATTERY)  
+- `condition_status` (DAMAGED, FUNCTIONAL)  
+- `created_at`
+
+### Collection Records
+- `collection_id` (PK)  
+- `user_id` (FK → users.user_id)  
+- `item_id` (FK → ewaste_items.item_id)  
+- `collection_date`  
+- `location`
+
+### Audit Log
+- `audit_id` (PK)  
+- `user_id` (FK → users.user_id)  
+- `action` (INSERT, UPDATE, DELETE)  
+- `table_name`  
+- `timestamp`  
+- `description`
+
+---
+
+## Relationships
+- **One-to-Many**:  
+  - User → Collection Records  
+  - Item → Collection Records  
+- **Audit**: Logs all actions on other tables
+
+---
+
+### ER Diagram Suggestion
+Include a diagram with:
+
