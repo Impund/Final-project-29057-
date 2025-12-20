@@ -1,0 +1,12 @@
+CREATE OR REPLACE FUNCTION count_collections (
+    p_user_id NUMBER
+) RETURN NUMBER IS
+    v_total NUMBER;
+BEGIN
+    SELECT COUNT(*) INTO v_total
+    FROM collection_records
+    WHERE user_id = p_user_id;
+
+    RETURN v_total;
+END;
+/
