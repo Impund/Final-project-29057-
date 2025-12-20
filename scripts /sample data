@@ -1,0 +1,13 @@
+INSERT INTO users (full_name, email, role)
+VALUES ('Admin Green', 'admin@eco.rw', 'ADMIN');
+
+INSERT INTO users (full_name, email, role)
+VALUES ('John Collector', 'john@eco.rw', 'COLLECTOR');
+
+INSERT INTO ewaste_items (item_name, category, condition_status)
+VALUES ('Laptop Dell', 'COMPUTER', 'DAMAGED');
+
+INSERT INTO collection_records (user_id, item_id, location)
+VALUES (2, 1, 'Kigali City');
+
+COMMIT;
