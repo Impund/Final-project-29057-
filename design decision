@@ -1,0 +1,73 @@
+# Design Decisions - E-Waste Collection & Recycling Tracking System
+
+## 1. Database Structure
+
+- **Normalized Tables (3NF)**:  
+  All tables were designed in Third Normal Form to reduce redundancy and improve data integrity. Each table has clearly defined primary keys and foreign keys to enforce relational integrity.
+
+- **Entities Overview**:  
+  - `Users`: Stores Admin, Collector, and Recycler information.  
+  - `E-Waste Items`: Tracks items by category, condition, and registration date.  
+  - `Collection Records`: Logs collection events including user, item, date, and location.  
+  - `Audit Log`: Maintains a record of all INSERT, UPDATE, and DELETE operations for accountability.  
+
+- **ER Diagram**:  
+  Include a clear ER diagram here (e.g., `ER_diagram.png`) showing all relationships.
+
+---
+
+## 2. Business Rules Implementation
+
+- **Triggers**:  
+  - Restrict collection inserts on weekdays and public holidays.  
+  - Automatically log all changes to `collection_records` and `ewaste_items`.  
+- **Rationale**: Ensures compliance with environmental collection schedules without manual monitoring.
+
+---
+
+## 3. PL/SQL Packages & Procedures
+
+- **Modularity**: Grouped related functions, procedures, and validation logic into packages.  
+- **Procedures & Functions**:  
+  - Validation functions for user input  
+  - Collection recording procedures with input checks  
+  - Reporting procedures for analytics  
+
+- **Performance Optimization**:  
+  - Explicit cursors and bulk operations used for multi-row processing.  
+  - Window functions for ranking and trend analysis.
+
+---
+
+## 4. Analytics & Business Intelligence
+
+- **Fact & Dimension Tables**:  
+  - Fact: `collection_records`  
+  - Dimensions: `users`, `ewaste_items`  
+- **BI Goals**:  
+  - Track top collectors  
+  - Identify most collected items by category  
+  - Monitor trends by week/month  
+- **Diagrams**:  
+  Include mockup dashboards with charts, KPI cards, and graphs for visual representation.
+
+---
+
+## 5. Security & Access Control
+
+- Role-based operations:
+  - Admin: Full access  
+  - Collector: Insert collections  
+  - Recycler: Read-only access for analysis  
+- Triggers enforce restrictions automatically, enhancing security and data integrity.
+
+---
+
+## 6. Additional Design Considerations
+
+- **Audit Trail**: Ensures traceability of every operation.  
+- **Scalability**: The database can support hundreds of users and thousands of collections.  
+- **Extensibility**: Easy to add new categories, locations, or user roles in the future.  
+
+**Conclusion:**  
+The system design emphasizes **accuracy, reliability, and scalability**, while providing a foundation for **real-time analytics** and **BI dashboards**.
