@@ -1,0 +1,39 @@
+# Business Intelligence Requirements
+
+## Purpose
+Support strategic decisions with insights derived from e-waste collection operations.
+
+## Stakeholders
+- Admins  
+- Environmental agencies  
+- Recycling companies  
+
+## KPIs
+- **Total Items Collected**: Daily, weekly, monthly  
+- **Top Collectors**: Ranked by collection volume  
+- **Item Category Distribution**: Percentage per category (e.g., Computers, Phones)  
+- **Collection Compliance**: Number of collections attempted on restricted days  
+- **Items Recycled vs Pending**: Track efficiency of recycling operations  
+
+---
+
+## Reporting Frequency
+- **Daily Reports**: Collection summary for Admin  
+- **Weekly Reports**: Collector performance & category distribution  
+- **Monthly Reports**: Audit & trend analysis  
+
+---
+
+## Decision Support
+- Identify top-performing collectors  
+- Monitor high-risk areas with delayed collections  
+- Track damaged vs functional items to improve recycling efficiency  
+- Dashboard mockups help visualize trends and KPIs
+
+---
+
+### Visual Suggestions
+- KPI Cards: Total collections, top collectors, pending audits  
+- Line Charts: Weekly collection trends  
+- Pie Charts: Distribution of item categories  
+- Heatmaps: Collector activity per city/region
