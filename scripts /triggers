@@ -1,0 +1,22 @@
+CREATE OR REPLACE TRIGGER trg_audit_collection
+AFTER INSERT OR DELETE OR UPDATE ON collection_records
+FOR EACH ROW
+BEGIN
+    INSERT INTO audit_log (
+        table_name,
+        operation,
+        user_name,
+        details
+    )
+    VALUES (
+        'COLLECTION_RECORDS',
+        CASE
+            WHEN INSERTING THEN 'INSERT'
+            WHEN DELETING THEN 'DELETE'
+            WHEN UPDATING THEN 'UPDATE'
+        END,
+        USER,
+        'Collection table modified'
+    );
+END;
+/
