@@ -1,0 +1,16 @@
+CREATE OR REPLACE PROCEDURE add_collection (
+    p_user_id IN NUMBER,
+    p_item_id IN NUMBER,
+    p_location IN VARCHAR2
+) AS
+BEGIN
+    INSERT INTO collection_records (user_id, item_id, location)
+    VALUES (p_user_id, p_item_id, p_location);
+
+    COMMIT;
+EXCEPTION
+    WHEN OTHERS THEN
+        ROLLBACK;
+        RAISE;
+END;
+/
