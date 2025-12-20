@@ -1,0 +1,33 @@
+# Business Process - E-Waste Collection & Recycling System
+
+## Overview
+This system manages e-waste collection from households, offices, and businesses. It tracks each step in the process, ensures compliance with schedules, and provides analytics for decision-making.
+
+### Key Actors
+- **Admin**: Manages users, items, collection rules, and auditing.  
+- **Collector**: Records collections and updates item status.  
+- **Recycler**: Uses system insights to plan recycling activities.  
+
+### Process Steps
+1. **User & Item Registration**  
+   - Admin registers users and e-waste items in the system.  
+   - Each item is categorized (Computer, Phone, Battery, etc.) and its condition is logged.
+
+2. **Collection Recording**  
+   - Collectors record items collected at each location.  
+   - Triggers automatically check for schedule compliance (no weekday/public holiday inserts).
+
+3. **Audit Logging**  
+   - All INSERT, UPDATE, DELETE operations are recorded in the audit log.  
+   - Provides traceability for compliance and accountability.
+
+4. **Analytics & Reporting**  
+   - Admin generates reports showing top collectors, items collected, and weekly trends.  
+   - Dashboards provide visual insights using graphs, KPI cards, and trend charts.
+
+---
+
+### Visual Representation (Suggested)
+
+**Swimlane Diagram:**
+business
